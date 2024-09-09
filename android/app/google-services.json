@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "741487293294",
+    "project_id": "dynamo-d2114",
+    "storage_bucket": "dynamo-d2114.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741487293294:android:1e954f70755351810f877f",
+        "android_client_info": {
+          "package_name": "com.example.mindlink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmnfsNTOcNE1oVKNZIV30FqGBqPY89CTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
