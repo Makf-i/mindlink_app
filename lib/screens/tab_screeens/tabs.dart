@@ -10,7 +10,14 @@ import 'package:mindlink/screens/tab_screeens/text.dart';
 import 'package:mindlink/screens/tab_screeens/video.dart';
 
 class TabsScreen extends ConsumerStatefulWidget {
-  const TabsScreen({super.key});
+  const TabsScreen({
+    super.key,
+    this.selectedTab,
+    this.strmLink,
+  });
+
+  final String? selectedTab;
+  final String? strmLink;
 
   @override
   ConsumerState<TabsScreen> createState() => _TabsScreenState();
@@ -25,6 +32,14 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
     ref.read(imageProvider.notifier).loadData();
     ref.read(videoProvider.notifier).loadData();
     ref.read(textProvider.notifier).loadData();
+
+    if (widget.selectedTab == 'text') {
+      _currentPage = 0; // Text tab index
+    } else if (widget.selectedTab == 'video') {
+      _currentPage = 1; // Video tab index
+    } else if (widget.selectedTab == 'image') {
+      _currentPage = 2; // Image tab index
+    }
   }
 
   Widget get _title {
@@ -43,6 +58,10 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
     return Scaffold(
         appBar: AppBar(
           title: _title,
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.help),
         ),
         drawer: Drawer(
           width: 250,
@@ -87,11 +106,11 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
             NavigationDestination(icon: Icon(Icons.image), label: "Image"),
           ],
         ),
-        body: const [
+        body: [
           // PostScreens(index: _currentPage),
-          TextScreen(),
-          VideoScreen(),
-          ImageScreen(),
+          TextScreen(strmLink: widget.strmLink),
+          VideoScreen(strmLink: widget.strmLink),
+          ImageScreen(strmLink: widget.strmLink),
         ][_currentPage]);
   }
 }

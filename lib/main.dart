@@ -49,6 +49,8 @@ class _MyAppState extends ConsumerState<MyApp> {
   }
 }
 
+
+
 final router = GoRouter(
   routes: [
     GoRoute(
@@ -57,23 +59,129 @@ final router = GoRouter(
       routes: [
         GoRoute(
           path: 'text',
-          builder: (context, state) => TextScreen(
-            strmLink: state.uri.queryParameters['id'],
+          builder: (context, state) => TabsScreen(
+            selectedTab: 'text', 
+            strmLink: state.uri.queryParameters['id'], 
           ),
         ),
         GoRoute(
           path: 'video',
-          builder: (context, state) => VideoScreen(
-            strmLink: state.uri.queryParameters['id'],
+          builder: (context, state) => TabsScreen(
+            selectedTab: 'video', 
+            strmLink: state.uri.queryParameters['id'], 
           ),
         ),
         GoRoute(
           path: 'image',
-          builder: (context, state) => ImageScreen(
-            strmLink: state.uri.queryParameters['id'],
+          builder: (context, state) => TabsScreen(
+            selectedTab: 'image', 
+            strmLink: state.uri.queryParameters['id'], 
           ),
         ),
       ],
     ),
   ],
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// final router = GoRouter(
+//   routes: [
+//     GoRoute(
+//       path: '/',
+//       builder: (context, state) {
+//         // Extract the query parameters if they exist
+//         final selectedTab = state.uri.queryParameters['type']; // e.g., text, video, image
+//         final id = state.uri.queryParameters['id']; // Media URL or ID
+//         print("this is the selectedtab'''''''''''''''${selectedTab}");
+//         print("this is the id '''''''''''''''''''''''''''''${id}");
+//         // Pass the parameters to TabsScreen
+//         return TabsScreen(
+//           selectedTab: selectedTab ?? 'text', // Tab type: text, video, or image
+//           strmLink: id, // Media URL
+//         );
+//       },
+//     ),
+//   ],
+// );
+
+// final router = GoRouter(
+//   routes: [
+//     GoRoute(
+//       path: '/',
+//       builder: (context, state) => const TabsScreen(),
+//       routes: [
+//         GoRoute(
+//           path: 'text',
+//           builder: (context, state) => TextScreen(
+//             strmLink: state.uri.queryParameters['id'],
+//           ),
+//         ),
+//         GoRoute(
+//           path: 'video',
+//           builder: (context, state) => VideoScreen(
+//             strmLink: state.uri.queryParameters['id'],
+//           ),
+//         ),
+//         GoRoute(
+//           path: 'image',
+//           builder: (context, state) => ImageScreen(
+//             strmLink: state.uri.queryParameters['id'],
+//           ),
+//         ),
+//       ],
+//     ),
+//   ],
+// );
