@@ -5,10 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mindlink/firebase_options.dart';
 import 'package:mindlink/screens/auth_screens.dart/auth.dart';
-import 'package:mindlink/screens/tab_screeens/image.dart';
 import 'package:mindlink/screens/tab_screeens/tabs.dart';
-import 'package:mindlink/screens/tab_screeens/text.dart';
-import 'package:mindlink/screens/tab_screeens/video.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
